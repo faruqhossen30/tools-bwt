@@ -20,7 +20,7 @@
         <meta property="og:description" content="{{ __($pageTrans->short_description) }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:site_name" content="{{ __($pageTitle) }}">
-        <meta property="og:updated_time" content="@php 
+        <meta property="og:updated_time" content="@php
 
           echo Carbon\Carbon::createFromFormat('Y-m-d H:i:s', ''.$page->updated_at.'' )->toIso8601String();
 
@@ -50,7 +50,7 @@
         @endphp
 
         @if ( !empty($page->featured_image) )
-        
+
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="{{ $page->featured_image }}">
         @endif
@@ -84,7 +84,7 @@
 
         <!-- Custom CSS -->
         <link type="text/css" href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
-        
+
         @if ( !empty($general->font_family) )
 
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ $general->font_family }}">
@@ -100,14 +100,14 @@
         @if ( $advanced->header_status == true && $advanced->insert_header != null )
           {!! $advanced->insert_header !!}
         @endif
-        
+
         @livewireStyles
 
     </head>
     <body class="antialiased {{ Cookie::get('theme_mode') }}">
 
       @if ( $general->maintenance_mode == true && !Auth::user() && $page->type != 'login' )
-        
+
         @livewire('frontend.maintenance')
 
       @else
@@ -134,6 +134,6 @@
             @livewireScripts
 
       @endif
-
+    @stack('script')
     </body>
 </html>
