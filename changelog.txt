@@ -1,0 +1,49 @@
+
+Version 1.0.3 (December 16, 2021)
+- NEW: Add Image Compressor.
+- NEW: Add Image Resizer.
+- NEW: Add Image Converter.
+- NEW: Add Image Cropper.
+- NEW: Add Image Enlarger.
+- NEW: Add Rotate Image.
+- NEW: Add Flip Image.
+- NEW: Add Base64 to Image.
+- NEW: Add JPG to PNG.
+- NEW: Add PNG to JPG.
+- NEW: Add JPG Converter.
+- NEW: Add WebP to JPG.
+- NEW: Add Youtube Thumbnail Downloader.
+- NEW: Add SRT to VTT.
+- NEW: Add VTT to SRT.
+- NEW: Add Text to Binary.
+- NEW: Add Binary to Text.
+- NEW: Add Image To Text.
+- NEW: Add Random Word Generator.
+- NEW: Add HEX to RGB.
+- NEW: Add RGB to HEX.
+- NEW: Add categories.
+- NEW: Add paste and copy buttons for some tools.
+- NEW: Add the feature to update the icon image for the tool.
+- NEW: Add Enable / Disable search box.
+- NEW: Add alignment and background color for Sidebar title.
+- ENHANCEMENT: Remove prefix on URL for default language.
+- ENHANCEMENT: Fix sidebar display.
+- ENHANCEMENT: Improved login page.
+- ENHANCEMENT: Improved new theme without categories.
+- ENHANCEMENT: Improved search box.
+- ENHANCEMENT: Improved Image to Base64, QR Code Decoder, ICO to PNG, ICO Converter.
+- ENHANCEMENT: Update the theme style to the latest version.
+- Minor bug fixes.
+
+Version 1.0.2 (November 17, 2021)
+- NEW: Add Proxy feature.
+- NEW: Add API Key feature.
+- FIXED: Get client IP.
+- Minor bug fixes.
+
+Version 1.0.1 (November 16, 2021)
+- NEW: Added advanced feature (Insert Header & Footer).
+- Minor bug fixes.
+
+Version 1.0.0 (November 10, 2021)
+ - Initial release.
