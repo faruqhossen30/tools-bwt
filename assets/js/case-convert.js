@@ -1,11 +1,8 @@
 $(document).ready(function () {
-
+	var caseconverter = store.get('caseconverter');
+	$("#input-text").val(caseconverter);
 	//convert to Sentence case on click
 	$("#sentence-case").click(function () {
-
-		//set display result type
-		// setResultDisplay(true, false);
-
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
 
@@ -28,10 +25,6 @@ $(document).ready(function () {
 
 	//convert to title case on click
 	$("#title-case").click(function () {
-
-		//set display result type
-		// setResultDisplay(true, false);
-
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
 
@@ -78,10 +71,6 @@ $(document).ready(function () {
 
 	//convert to capitalize case on click
 	$("#capitalize-case").click(function () {
-
-		//set display result type
-		setResultDisplay(true, false);
-
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
 
@@ -111,9 +100,6 @@ $(document).ready(function () {
 	//convert to lowercase case on click
 	$("#lower-case").click(function () {
 
-		//set display result type
-		setResultDisplay(true, false);
-
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
 
@@ -128,9 +114,6 @@ $(document).ready(function () {
 	//convert to upper case on click
 	$("#upper-case").click(function () {
 
-		//set display result type
-		setResultDisplay(true, false);
-
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
 
@@ -144,10 +127,6 @@ $(document).ready(function () {
 
 	//convert to bold text on click
 	$("#bold-text").click(function () {
-
-		//set display result type
-		setResultDisplay(false, true);
-
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
 
@@ -161,9 +140,6 @@ $(document).ready(function () {
 
 	//convert to underline text on click
 	$("#underline-text").click(function () {
-		//set display result type
-		setResultDisplay(false, true);
-
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
 
@@ -177,8 +153,6 @@ $(document).ready(function () {
 
 	//convert to strikethrough text on click
 	$("#strike-through").click(function () {
-		//set display result type
-		setResultDisplay(false, true);
 
 		//get text
 		var input_text = multiSpaceCheck($("#input-text").val());
@@ -205,10 +179,6 @@ $(document).ready(function () {
 
 	//Copy input data
 	$("#copy").click(function () {
-
-		//set display result type
-		// setResultDisplay(true, false);
-
 		//get text
 		$("#input-text").select();
 		document.execCommand('copy');
@@ -220,35 +190,55 @@ $(document).ready(function () {
 	});
 
 
+	// For Word Counter
+	addEventListener('input', function () {
+		var textbox =$("#input-text");
+        //Count Characters With Space
+        var charactersS = textbox.val().length;
+        //Count Characters Without Space
+        var charactersWS = textbox.val().replace(/\s+/g, '').length;
+        //Count Words
+        var wordsC = textbox.val().match(/\S+/g);
+        var words = wordsC ? wordsC.length : 0;
+        //Count Lines
+        var lines = textbox.val().split(/\n/).length;
+        var para = textbox.val().replace(/\n$/gm, '').split(/\n/).length
 
-	//this function sets which results display format to use
-	//takes boolean parameters to check
-	function setResultDisplay(textarea_type, div_type) {
-		//if textarea or div format
-		if (textarea_type) {
-			$("#textarea-result").show();
-			$("#div-result").hide();
+        // Show Output
+        $('#characterButton').html(charactersS);
+        $('#characters_with_spacesButton').html(charactersWS);
+        $('#wordsButton').html(words);
+        $('#lineButton').html(lines);
+        $('#paragraphButton').html(para);
 
-			$(".text-area-copy").show();
-			$(".div-copy").hide();
-		}
-		else if (div_type) {
-			$("#textarea-result").hide();
-			$("#div-result").show();
+        // Store2 Js
+        store('caseconverter', textbox.val());
+    });
 
-			$(".text-area-copy").hide();
-			$(".div-copy").show();
-		}
-		else {
-			$("#textarea-result").show();
-			$("#div-result").hide();
 
-			$(".text-area-copy").show();
-			$(".div-copy").hide();
-		}
+	function wordCounter(){
+		var textbox =$("#input-text");
+        //Count Characters With Space
+        var charactersS = textbox.val().length;
+        //Count Characters Without Space
+        var charactersWS = textbox.val().replace(/\s+/g, '').length;
+        //Count Words
+        var wordsC = textbox.val().match(/\S+/g);
+        var words = wordsC ? wordsC.length : 0;
+        //Count Lines
+        var lines = textbox.val().split(/\n/).length;
+        var para = textbox.val().replace(/\n$/gm, '').split(/\n/).length
+
+        // Show Output
+        $('#characterButton').html(charactersS);
+        $('#characters_with_spacesButton').html(charactersWS);
+        $('#wordsButton').html(words);
+        $('#lineButton').html(lines);
+        $('#paragraphButton').html(para);
+
+        // Store2 Js
+        store('caseconverter', textbox.val());
 	}
-
-
 
 
 

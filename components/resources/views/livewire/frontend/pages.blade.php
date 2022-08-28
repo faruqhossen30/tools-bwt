@@ -34,8 +34,8 @@
                   @else
                     <div class="position-absolute start-0 top-0 w-100 parallax-image" style="background-image: url({{ asset('assets/img/parallax.jpg') }});filter: blur({{ $general->blur }}px);"></div>
                   @endif
-
-                  <div class="container position-relative zindex-1">
+                    {{-- This is Page title content --}}
+                  {{-- <div class="container position-relative zindex-1">
                       <div class="col text-center p-lg-5 mx-auto my-5">
 
                           @if ( $page->ads_status == true && $advertisement->area1_status == true && $advertisement->area1 != null )
@@ -49,7 +49,7 @@
                             <x-frontend.advertisement.area2 :advertisement="$advertisement" />
                           @endif
                       </div>
-                  </div>
+                  </div> --}}
 
                 </div>
             </section>
@@ -172,7 +172,7 @@
                                           @case('Image To Text')
                                                 @livewire('frontend.tools.image-to-text')
                                               @break
-                                              
+
                                           @case('WebP to JPG')
                                                 @livewire('frontend.tools.webp-to-jpg')
                                               @break
@@ -376,10 +376,10 @@
                                           @case('IP Address Lookup')
                                                 @livewire('frontend.tools.ip-address-lookup')
                                               @break
-                                              
+
                                           @default
                                       @endswitch
-                                      
+
                                     </div>
                                   </div>
                                 @endif
@@ -679,7 +679,7 @@
           document.execCommand('copy');
         }
     </script>
-    
+
     @if ( $advanced->footer_status == true && $advanced->insert_footer != null )
       {!! $advanced->insert_footer !!}
     @endif
