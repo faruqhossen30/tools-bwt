@@ -161,6 +161,9 @@
 
                                 @if ( $page->type == 'tool')
                                   <div class="card mb-3">
+                                    <div class="card-header">
+                                        <h5 class="card-title">{{$page->tool_name}}</h5>
+                                    </div>
                                     <div class="card-body">
 
                                       @switch($page->tool_name)
